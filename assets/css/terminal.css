@@ -137,7 +137,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(380px circle at var(--mx) var(--my),
+  background: radial-gradient(30px circle at var(--mx) var(--my),
               color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%);
   opacity: 0;
   transition: opacity 0.35s ease;

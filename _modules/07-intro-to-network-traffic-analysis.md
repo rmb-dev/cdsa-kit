@@ -1,13 +1,24 @@
 ---
-title: "Module 16"          # Replace with the module name from the HTB Academy path
+title: "Intro to Network Traffic Analysis"
 category: Fundamental       # Fundamental | Easy | Medium …
 tier: 0
-order: 16
-topic_type: Theory          # Default badge for topics: Theory or Interactive
+order: 7
 placeholder: true           # Delete this line once the notes below are written
 ---
 
-## First Section
+## Analysis
+
+### First Topic
+
+Notes go here.
+
+## Tcpdump
+
+### First Topic
+
+Notes go here.
+
+## Wireshark
 
 ### First Topic
 

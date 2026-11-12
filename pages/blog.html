@@ -4,7 +4,7 @@ title: Blog
 permalink: /blog/
 weight: 1
 exam_kit: true
-description: Exam kit for the Hack The Box Certified Junior Cybersecurity Associate (CJCA) — 20 modules of notes and review material.
+description: Exam kit for the Hack The Box Certified Defensive Security Analyst (CDSA) — 15 modules of notes and review material.
 ---
 
 {%- assign modules = site.modules | sort: 'order' -%}
@@ -13,7 +13,7 @@ description: Exam kit for the Hack The Box Certified Junior Cybersecurity Associ
 {%- capture xk_summary -%}<span><strong>{{ built_modules.size }}</strong>/{{ modules.size }} modules written</span><span class="term-summary__dot" aria-hidden="true"></span><span><strong data-total-topics>0</strong> topics</span><span class="term-summary__dot" aria-hidden="true"></span><span><strong data-total-done>0</strong> reviewed</span>{%- endcapture -%}
 
 <header class="xk-hero mt-5 px-3">
-  {% include term/heading.html eyebrow="Hack The Box Academy &middot; Junior Cybersecurity Analyst path" title="CJCA Exam Kit" cwd="~/cjca" cmd="ls ./modules --notes" summary=xk_summary %}
+  {% include term/heading.html eyebrow="Hack The Box Academy &middot; Certified Defensive Security Analyst" title="CDSA Exam Kit" cwd="~/cdsa" cmd="ls ./modules --notes" summary=xk_summary %}
   <p class="xk-hero__lead">
     {{ modules.size }} modules, each with sections of theory notes and an exam kit.
     Open a module, then a topic, to read it here on this page.

@@ -1,13 +1,18 @@
 ---
-title: "Module 06"          # Replace with the module name from the HTB Academy path
+title: "Understanding Log Sources & Investigating with Splunk"
 category: Fundamental       # Fundamental | Easy | Medium …
 tier: 0
-order: 6
-topic_type: Theory          # Default badge for topics: Theory or Interactive
+order: 5
 placeholder: true           # Delete this line once the notes below are written
 ---
 
-## First Section
+## Splunk Fundamentals
+
+### First Topic
+
+Notes go here.
+
+## Investigating With Splunk
 
 ### First Topic
 

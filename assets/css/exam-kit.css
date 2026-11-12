@@ -135,6 +135,19 @@ details[open] > summary .xk-module__head-chevron,
   color: var(--htb-heading);
 }
 
+/* Foldable section ({: .fold}): drawn as a topic card, see .xk-topic */
+.xk-section--fold + .xk-section--fold {
+  margin-top: 0.45rem;
+}
+
+.xk-section--fold .xk-section__intro {
+  margin-bottom: 0.75rem;
+}
+
+.xk-section--fold .xk-section__intro:last-child {
+  margin-bottom: 0;
+}
+
 .xk-section__num {
   font-family: var(--term-mono);
   color: var(--htb-green);
@@ -179,8 +192,8 @@ details[open] > summary .xk-module__head-chevron,
   transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
-.xk-topic:has(.xk-badge--theory) { --c: var(--xk-theory-fg); }
-.xk-topic:has(.xk-badge--exam-kit) { --c: var(--xk-kit-fg); }
+.xk-topic--theory { --c: var(--xk-theory-fg); }
+.xk-topic--exam-kit { --c: var(--xk-kit-fg); }
 
 .xk-topic:not([open]):hover {
   transform: translateX(3px);
@@ -293,37 +306,6 @@ details[open] > summary .xk-module__head-chevron,
   margin-bottom: 0;
 }
 
-/* ---------- Badges ---------- */
-
-.xk-badge {
-  font-family: var(--term-mono);
-  font-size: 0.68rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  min-width: 7.2rem;
-  text-align: center;
-}
-
-.xk-badge--theory {
-  background: var(--xk-theory-bg);
-  color: var(--xk-theory-fg);
-}
-
-.xk-badge--interactive {
-  background: var(--xk-interactive-bg);
-  color: var(--xk-interactive-fg);
-}
-
-.xk-badge--exam-kit {
-  background: var(--xk-kit-bg);
-  color: var(--xk-kit-fg);
-}
-
 /* ---------- Filter / target ---------- */
 
 .xk-module[hidden],
@@ -347,10 +329,6 @@ details[open] > summary .xk-module__head-chevron,
   .xk-topic__head {
     flex-wrap: wrap;
     gap: 0.4rem 0.6rem;
-  }
-
-  .xk-badge {
-    min-width: 0;
   }
 
   .xk-module .term-path {

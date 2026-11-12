@@ -1,13 +1,18 @@
 ---
-title: "Module 11"          # Replace with the module name from the HTB Academy path
+title: "Windows Event Logs & Finding Evil"
 category: Fundamental       # Fundamental | Easy | Medium …
 tier: 0
-order: 11
-topic_type: Theory          # Default badge for topics: Theory or Interactive
+order: 3
 placeholder: true           # Delete this line once the notes below are written
 ---
 
-## First Section
+## Additional Telemetry Sources
+
+### First Topic
+
+Notes go here.
+
+## Analyzing Windows Event Logs En Masse
 
 ### First Topic
 

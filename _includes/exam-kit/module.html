@@ -3,6 +3,7 @@
 
   The module's Markdown body is split on its headings:
     ##  Heading  -> a section (numbered 1., 2., …)
+    {: .fold}    -> on the line under a ## heading: that section folds open/closed
     ### Heading  -> a topic inside that section (expands in place)
     ## Exam Kit  -> the module's exam kit; its ### headings become kit cards
 
@@ -23,7 +24,7 @@
 <details class="xk-module term-panel{% if mod.placeholder %} xk-module--placeholder{% endif %}" id="{{ mod_id }}" style="--accent: {% if mod.placeholder %}var(--htb-muted){% else %}var(--htb-green){% endif %};" data-module data-term-panel data-reveal>
   <summary class="xk-module__head">
     <div class="term-bar">
-      <span class="term-path" aria-hidden="true">~/cjca/{{ mod_num }}-{{ mod_id }}</span>
+      <span class="term-path" aria-hidden="true">~/cdsa/{{ mod_num }}-{{ mod_id }}</span>
       {%- unless mod.placeholder %}
       <span class="term-bar__end xk-module__progress" data-progress></span>
       {%- endunless %}
@@ -70,6 +71,9 @@
       {%- assign is_kit = false -%}
       {%- if sec_key == 'exam kit' -%}{%- assign is_kit = true -%}{%- endif -%}
 
+      {%- assign is_fold = false -%}
+      {%- if is_kit == false and attrs contains 'class="fold' -%}{%- assign is_fold = true -%}{%- endif -%}
+
       {%- if is_kit -%}
         {%- assign sec_id = mod_id | append: '--exam-kit' -%}
       {%- else -%}
@@ -77,12 +81,20 @@
         {%- assign sec_id = mod_id | append: '--s' | append: sec_n -%}
       {%- endif -%}
 
-      <section class="xk-section{% if is_kit %} xk-section--kit term-panel{% endif %}" id="{{ sec_id }}"{% if is_kit %} style="--accent: var(--htb-yellow);" data-term-panel{% endif %} data-section>
+      {%- if is_fold -%}{%- assign sec_tag = 'details' -%}{%- else -%}{%- assign sec_tag = 'section' -%}{%- endif %}
+      <{{ sec_tag }} class="xk-section{% if is_fold %} xk-section--fold xk-topic xk-topic--{{ default_type | slugify }}{% endif %}{% if is_kit %} xk-section--kit term-panel{% endif %}" id="{{ sec_id }}"{% if is_kit %} style="--accent: var(--htb-yellow);" data-term-panel{% endif %} data-section>
         {%- if is_kit %}
         <div class="term-bar" aria-hidden="true">
-          <span class="term-path">~/cjca/{{ mod_num }}/exam-kit</span>
+          <span class="term-path">~/cdsa/{{ mod_num }}/exam-kit</span>
         </div>
         {%- endif %}
+        {%- if is_fold %}
+        <summary class="xk-topic__head">
+          <span class="xk-topic__title"><span class="xk-section__num">{{ sec_n }}.</span> {{ sec_title }}</span>
+          <i class="fas fa-chevron-down xk-chevron" aria-hidden="true"></i>
+        </summary>
+        <div class="xk-topic__body">
+        {%- else %}
         <h2 class="xk-section__title">
           {%- if is_kit -%}
             <span class="term-icon" aria-hidden="true"><i class="fas fa-clipboard-check"></i></span> Exam Kit
@@ -90,6 +102,7 @@
             <span class="xk-section__num">{{ sec_n }}.</span> {{ sec_title }}
           {%- endif -%}
         </h2>
+        {%- endif %}
 
         {%- assign topics = sec_body | split: '<h3' -%}
         {%- assign sec_intro = topics | first | strip -%}
@@ -115,9 +128,8 @@
           {%- endif -%}
           {%- assign t_id = sec_id | append: '-t' | append: forloop.index -%}
 
-          <details class="xk-topic" id="{{ t_id }}" data-topic>
+          <details class="xk-topic xk-topic--{{ t_type | slugify }}" id="{{ t_id }}" data-topic>
             <summary class="xk-topic__head">
-              <span class="xk-badge xk-badge--{{ t_type | slugify }}">{{ t_type }}</span>
               <span class="xk-topic__title">{{ t_title }}</span>
               <i class="fas fa-check-circle xk-topic__done" aria-hidden="true" title="Reviewed"></i>
               <i class="fas fa-chevron-down xk-chevron" aria-hidden="true"></i>
@@ -134,7 +146,10 @@
           </details>
         {%- endfor -%}
         </div>
-      </section>
+        {%- if is_fold %}
+        </div>
+        {%- endif %}
+      </{{ sec_tag }}>
     {%- endfor -%}
   {%- endif -%}
   </div>

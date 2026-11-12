@@ -1,4 +1,4 @@
-/* CJCA Exam Kit — Blog page behaviour
+/* CDSA Exam Kit — Blog page behaviour
    - "Mark as reviewed" progress, saved per browser (localStorage)
    - Topic filter
    - Expand / collapse all
@@ -9,6 +9,7 @@
   var STORE_KEY = "cjca-exam-kit:done";
   var modules = Array.prototype.slice.call(document.querySelectorAll("[data-module]"));
   var topics = Array.prototype.slice.call(document.querySelectorAll("[data-topic]"));
+  var folds = Array.prototype.slice.call(document.querySelectorAll(".xk-section--fold"));
 
   /* ---------- Storage (fails safely in private mode) ---------- */
 
@@ -89,6 +90,7 @@
     modules.forEach(function (m) {
       if (!m.hidden) m.open = open;
     });
+    folds.forEach(function (f) { f.open = open; });
     if (!open) topics.forEach(function (t) { t.open = false; });
   }
 
@@ -117,13 +119,18 @@
       var modMatch = false;
 
       mod.querySelectorAll("[data-section]").forEach(function (sec) {
-        var secMatch = false;
+        // A section's own text (heading + notes under it) counts as a match too
+        var secText = sec.querySelector(".xk-section__title, .xk-topic__title").textContent;
+        var intro = sec.querySelector(".xk-section__intro");
+        if (intro) secText += " " + intro.textContent;
+        var secMatch = !q || secText.toLowerCase().indexOf(q) !== -1;
         sec.querySelectorAll("[data-topic]").forEach(function (t) {
           var match = !q || t._xkText.indexOf(q) !== -1;
           t.hidden = !match;
           if (match) secMatch = true;
         });
         sec.hidden = !secMatch;
+        if (q && secMatch && sec.tagName === "DETAILS") sec.open = true;
         if (secMatch) modMatch = true;
       });
 

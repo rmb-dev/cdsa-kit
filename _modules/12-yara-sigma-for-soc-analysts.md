@@ -1,13 +1,18 @@
 ---
-title: "Module 07"          # Replace with the module name from the HTB Academy path
+title: "YARA & Sigma for SOC Analysts"
 category: Fundamental       # Fundamental | Easy | Medium …
 tier: 0
-order: 7
-topic_type: Theory          # Default badge for topics: Theory or Interactive
+order: 12
 placeholder: true           # Delete this line once the notes below are written
 ---
 
-## First Section
+## Leveraging YARA
+
+### First Topic
+
+Notes go here.
+
+## Leveraging Sigma
 
 ### First Topic
 

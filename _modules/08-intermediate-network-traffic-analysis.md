@@ -1,13 +1,24 @@
 ---
-title: "Module 08"          # Replace with the module name from the HTB Academy path
+title: "Intermediate Network Traffic Analysis"
 category: Fundamental       # Fundamental | Easy | Medium …
 tier: 0
 order: 8
-topic_type: Theory          # Default badge for topics: Theory or Interactive
 placeholder: true           # Delete this line once the notes below are written
 ---
 
-## First Section
+## Link Layer Attacks
+
+### First Topic
+
+Notes go here.
+
+## Detecting Network Abnormalities
+
+### First Topic
+
+Notes go here.
+
+## Application Layer Attacks
 
 ### First Topic
 

@@ -1,6 +1,6 @@
 ### Site Settings ###
 title               : "rmb_dev"
-description         : Front-end developer transitioning into cybersecurity. Documenting my path through HTB Academy, sharing Junior Cybersecurity Analyst theory notes, and building a practical exam kit.
+description         : Front-end developer transitioning into cybersecurity. Documenting my path through HTB Academy, sharing Certified Defensive Security Analyst theory notes, and building a practical exam kit.
 # domain            : rmb-dev.github.io    # To force HTTPS, specify the domain without the http at the start, e.g. example.com
 # URL               : https://rmb-dev.github.io  # the base hostname and protocol for your site, e.g. http://example.com
 # baseurl           : rmb-dev.github.io    # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
@@ -24,7 +24,7 @@ nav_exclude:                  # The following paths are excluded from navbar
 ### Author Info ###
 author:
   name              : rmb
-  image             : /assets/CP.png
+  image             : /assets/cdsa.png
   # image             : https://i.postimg.cc/KYbsbZLg/Letter-Mosaic-3.png
 # behance           : your_username
 # dribbble          : your_username
