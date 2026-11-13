@@ -8,9 +8,45 @@ placeholder: false
 
 ## Introduction
 
-### First Topic
+### Incident Handling
 
-Notes go here.
+#### Incident Handling Definition & Scope
+
+**Incident handling (IH)** has become an important part of an organization's defensive capability against cybercrime. While protective measures are constantly being implemented to prevent or reduce the number of security incidents, an incident handling capability is undeniably a necessity for any organization that cannot afford a compromise of its data confidentiality, integrity, or availability. Some organizations choose to implement this capability in-house, while others rely on third-party providers to support them, continuously or when needed. Before we dive into the world of security incidents, let's define some terms and establish a common understanding of them.
+
+An event is an action occurring in a system or network. Examples of events include:
+
+- A user sending an email.
+- A mouse click.
+- A firewall allowing a connection request.
+
+An **incident** is an event with a negative consequence. One example of an incident is a system crash. Another example is unauthorized access to sensitive data. Incidents can also occur due to natural disasters, power failures, so on.
+
+There is no single definition of what an IT security incident is, and therefore it varies between organizations. We define an IT security incident as an event with a clear intent to cause harm that is performed against a computer system. Examples of incidents include:
+
+- Data theft.
+- Funds theft.
+- Unauthorized access to data.
+- Installation and use of malware and remote access tools.
+
+**Incident handling is a clearly defined set of procedures for managing and responding to security incidents in a computer or network environment.**
+
+```mermaid
+---
+title: Incident Response Life Cycle Model
+---
+flowchart LR
+    P["fa:fa-shield-alt Preparation"]:::aqua
+    D["fa:fa-search Detection and Analysis"]:::yellow
+    C["fa:fa-ambulance Containment, Eradication and Recovery"]:::red
+    A["fa:fa-clipboard-check Post-Incident Activity"]:::blue
+
+    P --> D
+    D --> C
+    C --> D
+    C --> A
+    A --> P
+```
 
 ## The Incident Handling Process
 

@@ -596,6 +596,28 @@ a.term-tag:hover,
   background: transparent !important;
 }
 
+/* ---------- Diagrams (Mermaid — assets/js/diagrams.js) ---------- */
+
+.diagram {
+  margin: 0 0 1.6em;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--htb-border);
+  border-radius: 10px;
+  background: var(--htb-bg-deep);
+  text-align: center;
+  overflow-x: auto;
+}
+
+.diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* A ```mermaid block waiting to be drawn: keep its space, hide the code */
+.diagram-pending > * {
+  visibility: hidden;
+}
+
 /* ---------- Scroll reveal (only when terminal.js runs) ---------- */
 
 .term-js [data-reveal] {
